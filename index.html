@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="calcApp" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>The calculator for the AFP company </title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+
+    <h1>Калькулятор для AFP </h1>
+    <p> Модуль: {{moduleName}} </p>
+    <p> Сообщение: {{message}} </p>
+
+      <div class="container" ng-controller="calcController as calc" id="calc">
+        <div class="row">
+          <div class="btn-group" role="group" aria-label="test" ng-repeat="servise in servises">
+            <button type="button" ng-click="choseServise(ID)" class="btn btn-default col-md-4">{{servise.name}}</button>
+          </div>  
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+           <label>Выбранная услуга: {{chosenServiceName}}</label>
+          </div>
+          <div class="col-md-12">
+           Необходимая сумма кредита, EUR 
+          </div>
+          <div class="col-md-12">
+            Срок погашения, месяцев
+          </div>
+          <div class="col-md-12">
+            Ежемесячный платёж
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Angular -->
+    <script src="js/lib/angular.min.js"></script>
+
+    <script type="text/javascript">
+    
+/*
+    var model = {
+        servises: [
+            { serviseID: 1, serviseName: "Потребительский кредит", chosen: false},
+            { serviseID: 2, serviseName: "Автокредит", chosen: false },
+            { serviseID: 3, serviseName: "Кредит под залог недвижимости", chosen: true }
+            
+        ]
+    };
+
+    */
+
+    angular.module('calcApp',[]);
+
+    </script>
+
+    <script src="js/controllers/calcController.js"></script>
+
+
+
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
